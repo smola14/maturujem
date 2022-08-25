@@ -2,6 +2,17 @@
   <div>
     <img src="@/img.png" alt="img" />
   </div>
+
+  <footer class="bottom">
+    <input type="number" />
+    <button class="answer">A</button>
+
+    <input type="number" />
+    <button class="find-question">F</button>
+
+    <input type="range" />
+    <span>green black red</span>
+  </footer>
 </template>
 
 <script setup></script>
@@ -9,5 +20,40 @@
 <style lang="scss" scoped>
 img {
   width: 100%;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+input,
+button {
+  all: unset;
+  font-size: inherit;
+  padding: 0.5em 0.8rem;
+  margin: 0.1em 0.2em;
+  /* the following ensures they're all using the same box-model for rendering */
+  -moz-box-sizing: content-box; /* or `border-box` */
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+
+button {
+  border-radius: 0.3rem;
+  background: lightblue;
+  border: 1px solid black;
 }
 </style>

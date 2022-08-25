@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="@/math/11_2019.png" alt="" />
+    <img src="/math/11_2019.png" alt="" />
   </div>
 
   <footer class="bottom">

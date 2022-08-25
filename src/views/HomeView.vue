@@ -5,15 +5,27 @@
     </div>
   </div>
 
+  <vue-drawing-canvas
+    class="drawing-canvas"
+    backgroundColor="transparent"
+    width="1200"
+    height="700"
+    lineJoin="round"
+    :color="canvasColor"
+  />
+
   <footer class="bottom">
-    <input type="number" v-model="userAnswer" />
+    <input type="number" v-model="userAnswer" @submit="checkAnswer" />
     <button class="answer" @click="checkAnswer">A</button>
 
     <input type="number" />
     <button class="find-question">F</button>
 
-    <input type="range" />
-    <span>green black red</span>
+    <div>
+      <div @click="canvasColor = 'black'">black</div>
+      <div @click="canvasColor = 'green'">green</div>
+      <div @click="canvasColor = 'red'">red</div>
+    </div>
   </footer>
 </template>
 
@@ -23,6 +35,7 @@
 */
 
 import { onMounted, reactive, ref } from "vue";
+import VueDrawingCanvas from "vue-drawing-canvas";
 
 /*
   CONSTANTS
@@ -30,6 +43,7 @@ import { onMounted, reactive, ref } from "vue";
 
 const obj = reactive({});
 const userAnswer = ref("");
+const canvasColor = ref("black");
 
 onMounted(() => {
   fetch("/math/data_math.json")
@@ -56,10 +70,11 @@ const checkAnswer = () => {
 
 <style lang="scss" scoped>
 img {
-  width: 100%;
+  width: 75%;
 }
 
 .bottom {
+  display: flex;
   position: absolute;
   bottom: 0;
   margin-bottom: 1.5rem;
@@ -68,6 +83,7 @@ img {
   left: 0;
   right: 0;
   text-align: center;
+  z-index: 3;
 }
 
 input,
@@ -93,5 +109,15 @@ button {
   background: lightblue;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.drawing-canvas {
+  border: 1px solid black;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -100px !important;
 }
 </style>

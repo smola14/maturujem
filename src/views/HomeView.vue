@@ -15,15 +15,15 @@
       <footer class="bottom">
         <div class="answer">
           <div v-if="typeof ob.answer == 'number'" class="answer-number">
-            <input type="number" v-model="userAnswer" @submit="checkAnswer" />
+            <input type="number" @submit="checkAnswer" />
             <button class="answer" @click="checkAnswer(ob.answer)">A</button>
           </div>
           <div v-else class="answer-string">
-            <button class="answer" @click="checkAnswer(A)">A</button>
-            <button class="answer" @click="checkAnswer(B)">B</button>
-            <button class="answer" @click="checkAnswer(C)">C</button>
-            <button class="answer" @click="checkAnswer(D)">D</button>
-            <button class="answer" @click="checkAnswer(E)">E</button>
+            <button class="answer" @click="checkAnswer('A')">A</button>
+            <button class="answer" @click="checkAnswer('B')">B</button>
+            <button class="answer" @click="checkAnswer('C')">C</button>
+            <button class="answer" @click="checkAnswer('D')">D</button>
+            <button class="answer" @click="checkAnswer('E')">E</button>
           </div>
         </div>
 
@@ -53,7 +53,6 @@ import VueDrawingCanvas from "vue-drawing-canvas";
 */
 
 const obj = reactive({});
-const userAnswer = ref("");
 const canvasColor = ref("black");
 
 onMounted(() => {
@@ -74,13 +73,13 @@ const fetchData = () => {
     );
 };
 
-const checkAnswer = () => {
-  if (userAnswer.value == obj.value.answer) {
+function checkAnswer(userAnswer) {
+  if (userAnswer == obj.value.answer) {
     alert("spravne");
   } else {
     alert("nespravne");
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

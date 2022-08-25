@@ -21,10 +21,10 @@
     <input type="number" />
     <button class="find-question">F</button>
 
-    <div>
-      <div @click="canvasColor = 'black'">black</div>
-      <div @click="canvasColor = 'green'">green</div>
-      <div @click="canvasColor = 'red'">red</div>
+    <div class="colors">
+      <button @click="canvasColor = 'black'" class="black"></button>
+      <button @click="canvasColor = 'green'" class="green"></button>
+      <button @click="canvasColor = 'red'" class="red"></button>
     </div>
   </footer>
 </template>
@@ -77,12 +77,8 @@ img {
   display: flex;
   position: absolute;
   bottom: 0;
-  margin-bottom: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
+  margin-bottom: 1rem;
+
   z-index: 3;
 }
 
@@ -119,5 +115,22 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: -100px !important;
+}
+
+.colors {
+  button {
+    border-radius: 50%;
+  }
+  .black {
+    background: black;
+  }
+
+  .red {
+    background: red;
+  }
+
+  .green {
+    background: green;
+  }
 }
 </style>

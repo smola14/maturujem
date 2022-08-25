@@ -18,8 +18,8 @@
     <input type="number" v-model="userAnswer" @submit="checkAnswer" />
     <button class="answer" @click="checkAnswer">A</button>
 
-    <input type="number" />
-    <button class="find-question">F</button>
+    <!-- <input type="number" /> -->
+    <button class="find-question" @click="fetchData">NEXT QUESTION</button>
 
     <div class="colors">
       <button @click="canvasColor = 'black'" class="black"></button>
@@ -46,18 +46,22 @@ const userAnswer = ref("");
 const canvasColor = ref("black");
 
 onMounted(() => {
+  fetchData();
+});
+
+const fetchData = () => {
   fetch("/math/data_math.json")
     .then((r) => r.json())
     .then(
       (json) => {
-        let randInt = Math.floor(Math.random() * 11) + 1;
+        let randInt = Math.floor(Math.random() * 10) + 1;
         obj.value = json.math.find((element) => element.id == randInt);
       },
       (response) => {
         console.log("Error loading json:", response);
       }
     );
-});
+};
 
 const checkAnswer = () => {
   if (userAnswer.value == obj.value.answer) {

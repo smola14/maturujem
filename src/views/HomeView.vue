@@ -19,7 +19,7 @@
     <button class="answer" @click="checkAnswer">A</button>
 
     <!-- <input type="number" /> -->
-    <button class="find-question" @click="fetchData">NEXT QUESTION</button>
+    <button class="next-question" @click="fetchData">NEXT QUESTION</button>
 
     <div class="colors">
       <button @click="canvasColor = 'black'" class="black"></button>

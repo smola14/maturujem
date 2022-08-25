@@ -45,42 +45,42 @@
   IMPORTS
 */
 
-import { onMounted, reactive, ref } from "vue";
-import VueDrawingCanvas from "vue-drawing-canvas";
+import { onMounted, reactive, ref } from 'vue'
+import VueDrawingCanvas from 'vue-drawing-canvas'
 
 /*
   CONSTANTS
 */
 
-const obj = reactive({});
-const userAnswer = ref("");
-const canvasColor = ref("black");
+const obj = reactive({})
+const userAnswer = ref('')
+const canvasColor = ref('black')
 
 onMounted(() => {
-  fetchData();
-});
+  fetchData()
+})
 
 const fetchData = () => {
-  fetch("/math/data_math.json")
+  fetch('/math/data_math.json')
     .then((r) => r.json())
     .then(
       (json) => {
-        let randInt = Math.floor(Math.random() * 10) + 1;
-        obj.value = json.math.find((element) => element.id == randInt);
+        let randInt = Math.floor(Math.random() * 30) + 1
+        obj.value = json.math.find((element) => element.id == randInt)
       },
       (response) => {
-        console.log("Error loading json:", response);
+        console.log('Error loading json:', response)
       }
-    );
-};
+    )
+}
 
 const checkAnswer = () => {
   if (userAnswer.value == obj.value.answer) {
-    alert("spravne");
+    alert('spravne')
   } else {
-    alert("nespravne");
+    alert('nespravne')
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,0 +1,184 @@
+{
+  "math": [
+    {
+      "id": 1,
+      "year": 2019,
+      "picture": "/math/1_2019.png",
+      "answer": 7.5
+    },
+    {
+      "id": 2,
+      "year": 2019,
+      "picture": "/math/2_2019.png",
+      "answer": 55
+    },
+    {
+      "id": 3,
+      "year": 2019,
+      "picture": "/math/3_2019.png",
+      "answer": -4
+    },
+    {
+      "id": 4,
+      "year": 2019,
+      "picture": "/math/4_2019.png",
+      "answer": 8
+    },
+    {
+      "id": 5,
+      "year": 2019,
+      "picture": "/math/5_2019.png",
+      "answer": 48
+    },
+    {
+      "id": 6,
+      "year": 2019,
+      "picture": "/math/6_2019.png",
+      "answer": 891
+    },
+    {
+      "id": 7,
+      "year": 2019,
+      "picture": "/math/7_2019.png",
+      "answer": 25
+    },
+    {
+      "id": 8,
+      "year": 2019,
+      "picture": "/math/8_2019.png",
+      "answer": 2
+    },
+    {
+      "id": 9,
+      "year": 2019,
+      "picture": "/math/9_2019.png",
+      "answer": 1.5
+    },
+    {
+      "id": 10,
+      "year": 2019,
+      "picture": "/math/10_2019.png",
+      "answer": 1.2
+    },
+    {
+      "id": 11,
+      "year": 2019,
+      "picture": "/math/11_2019.png",
+      "answer": 279.75
+    },
+    {
+      "id": 42,
+      "year": 2019,
+      "picture": "/math/42.png",
+      "answer": 52.5
+    },
+    {
+      "id": 43,
+      "year": 2019,
+      "picture": "/math/43.png",
+      "answer": 3
+    },
+    {
+      "id": 44,
+      "year": 2019,
+      "picture": "/math/44.png",
+      "answer": 25.56
+    },
+    {
+      "id": 45,
+      "year": 2019,
+      "picture": "/math/45.png",
+      "answer": 2
+    },
+    {
+      "id": 46,
+      "year": 2019,
+      "picture": "/math/46.png",
+      "answer": 53.13
+    },
+    {
+      "id": 47,
+      "year": 2019,
+      "picture": "/math/47.png",
+      "answer": 4
+    },
+    {
+      "id": 48,
+      "year": 2019,
+      "picture": "/math/48.png",
+      "answer": 2.48
+    },
+    {
+      "id": 49,
+      "year": 2019,
+      "picture": "/math/49.png",
+      "answer": 36.31
+    },
+    {
+      "id": 50,
+      "year": 2019,
+      "picture": "/math/50.png",
+      "answer": 0.13
+    },
+    {
+      "id": 51,
+      "year": 2019,
+      "picture": "/math/51.png",
+      "answer": "D"
+    },
+    {
+      "id": 52,
+      "year": 2019,
+      "picture": "/math/52.png",
+      "answer": "A"
+    },
+    {
+      "id": 53,
+      "year": 2019,
+      "picture": "/math/53.png",
+      "answer": "B"
+    },
+    {
+      "id": 54,
+      "year": 2019,
+      "picture": "/math/54.png",
+      "answer": "C"
+    },
+    {
+      "id": 55,
+      "year": 2019,
+      "picture": "/math/55.png",
+      "answer": "D"
+    },
+    {
+      "id": 56,
+      "year": 2019,
+      "picture": "/math/56.png",
+      "answer": "C"
+    },
+    {
+      "id": 57,
+      "year": 2019,
+      "picture": "/math/57.png",
+      "answer": "B"
+    },
+    {
+      "id": 58,
+      "year": 2019,
+      "picture": "/math/58.png",
+      "answer": "E"
+    },
+    {
+      "id": 59,
+      "year": 2019,
+      "picture": "/math/59.png",
+      "answer": "E"
+    },
+    {
+      "id": 60,
+      "year": 2019,
+      "picture": "/math/60.png",
+      "answer": "A"
+    }
+  ]
+}

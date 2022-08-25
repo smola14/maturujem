@@ -2,31 +2,42 @@
   <div>
     <div v-for="ob in obj">
       <img :src="ob.picture" alt="" />
+
+      <vue-drawing-canvas
+        class="drawing-canvas"
+        backgroundColor="transparent"
+        width="1200"
+        height="700"
+        lineJoin="round"
+        :color="canvasColor"
+      />
+
+      <footer class="bottom">
+        <div class="answer">
+          <div v-if="typeof ob.answer == 'number'" class="answer-number">
+            <input type="number" v-model="userAnswer" @submit="checkAnswer" />
+            <button class="answer" @click="checkAnswer(ob.answer)">A</button>
+          </div>
+          <div v-else class="answer-string">
+            <button class="answer" @click="checkAnswer(A)">A</button>
+            <button class="answer" @click="checkAnswer(B)">B</button>
+            <button class="answer" @click="checkAnswer(C)">C</button>
+            <button class="answer" @click="checkAnswer(D)">D</button>
+            <button class="answer" @click="checkAnswer(E)">E</button>
+          </div>
+        </div>
+
+        <!-- <input type="number" /> -->
+        <button class="next-question" @click="fetchData">NEXT QUESTION</button>
+
+        <div class="colors">
+          <button @click="canvasColor = 'black'" class="black"></button>
+          <button @click="canvasColor = 'green'" class="green"></button>
+          <button @click="canvasColor = 'red'" class="red"></button>
+        </div>
+      </footer>
     </div>
   </div>
-
-  <vue-drawing-canvas
-    class="drawing-canvas"
-    backgroundColor="transparent"
-    width="1200"
-    height="700"
-    lineJoin="round"
-    :color="canvasColor"
-  />
-
-  <footer class="bottom">
-    <input type="number" v-model="userAnswer" @submit="checkAnswer" />
-    <button class="answer" @click="checkAnswer">A</button>
-
-    <!-- <input type="number" /> -->
-    <button class="next-question" @click="fetchData">NEXT QUESTION</button>
-
-    <div class="colors">
-      <button @click="canvasColor = 'black'" class="black"></button>
-      <button @click="canvasColor = 'green'" class="green"></button>
-      <button @click="canvasColor = 'red'" class="red"></button>
-    </div>
-  </footer>
 </template>
 
 <script setup>

@@ -1,11 +1,13 @@
 <template>
   <div>
-    <img src="/math/11_2019.png" alt="" />
+    <div v-for="ob in obj">
+      <img :src="ob.picture" alt="" />
+    </div>
   </div>
 
   <footer class="bottom">
-    <input type="number" />
-    <button class="answer">A</button>
+    <input type="number" v-model="userAnswer" />
+    <button class="answer" @click="checkAnswer">A</button>
 
     <input type="number" />
     <button class="find-question">F</button>
@@ -15,7 +17,42 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+/*
+  IMPORTS
+*/
+
+import { onMounted, reactive, ref } from "vue";
+
+/*
+  CONSTANTS
+*/
+
+const obj = reactive({});
+const userAnswer = ref("");
+
+onMounted(() => {
+  fetch("/math/data_math.json")
+    .then((r) => r.json())
+    .then(
+      (json) => {
+        let randInt = Math.floor(Math.random() * 11) + 1;
+        obj.value = json.math.find((element) => element.id == randInt);
+      },
+      (response) => {
+        console.log("Error loading json:", response);
+      }
+    );
+});
+
+const checkAnswer = () => {
+  if (userAnswer.value == obj.value.answer) {
+    alert("spravne");
+  } else {
+    alert("nespravne");
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 img {

@@ -55,5 +55,6 @@ button {
   border-radius: 0.3rem;
   background: lightblue;
   border: 1px solid black;
+  cursor: pointer;
 }
 </style>

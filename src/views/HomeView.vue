@@ -66,7 +66,6 @@ const fetchData = () => {
     .then(
       (json) => {
         let randInt = Math.floor(Math.random() * 30) + 1;
-        console.log(randInt);
         obj.value = json.math.find((element) => element.id == randInt);
       },
       (response) => {
